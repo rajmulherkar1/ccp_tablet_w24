@@ -1,0 +1,268 @@
+/* reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  img, video{
+    animation: none;
+    transition: none;
+  }
+
+  img:hover, video:hover{
+    transform: none;
+  }
+
+  .gif {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  img, video{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  img:hover, video:hover{
+    transform: scale(1.02);
+  }
+}
+
+/* Default (Mobile) View */
+
+/* general */
+body {
+  font-family: 'Rubik', 'sans-serif';
+  margin: 0;
+  padding: 0;
+  background-color: #ecf0f1;
+  color: #2c3e50;
+}
+
+h1 {
+  font-size: 2em;
+  text-align: center;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  color: #e74c3c;
+}
+
+h2 {
+  font-size: 1.5em;
+  text-align: center;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  color: #2c3e50;
+}
+
+h3 {
+  font-size: 1.2em;
+  text-align: center;
+  padding-bottom: 1em;
+  color: darkgreen;
+}
+
+p {
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: 1em;
+  text-align: justify;
+}
+
+ul {
+  list-style-type:circle   ;
+  padding-left: 1.5em;
+  padding-right: 1em;
+  margin: 1em;
+  border: 1px dashed #2c3e50;
+}
+
+/* skip to main */
+.skip-to-main {
+  position: absolute;
+  left: -9999px;
+  z-index: 999;
+  padding: 1em;
+  background-color: black;
+  color: white;
+  opacity: 0;
+}
+
+.skip-to-main:focus {
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 1;
+}
+
+/* navigation bar */
+
+.navbar {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  margin-bottom: 0.5em;
+  /* background-color: #3498db; */
+  background-color: #2c3e50;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+}
+
+.navbar li {
+  /* adding this so all elements line up with active element */
+  border: 1px solid #2c3e50;
+  padding: 3px;
+  border-radius: 5%;
+}
+
+.navbar li.active {
+  border: 1px solid red;
+  padding: 3px;
+  border-radius: 5%;
+}
+
+.active a {
+  color: white;
+  text-transform: uppercase;
+}
+
+/* general images */
+img, video{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  padding: 0.5em;
+  margin: 0px;
+}
+
+.under-photos {
+  margin-top: 25px;
+}
+
+.caption {
+  text-align: center;
+  padding: 0.5em;
+  font-size: 0.8em;
+  color: black;
+}
+
+/* pet content */
+.pet-photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.main-pet-image, .main-recipe-image {
+  border: 3px solid #2c3e50;
+  transition: none;
+}
+
+.main-pet-image:hover, .main-recipe-image:hover {
+  transform: none;
+}
+
+/* recipe content */
+.recipe-photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.recipe-details {
+  padding: 1em;
+  margin: 1em;
+  border: 1px solid #2c3e50;
+  border-radius: 5%;
+}
+
+.recipe-details p {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.recipe-photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.cookie-photo-2 {
+  grid-column: 1 / -1;
+  grid-row: 2 / 3;
+}
+
+.chicken-parm-photo-1 {
+  grid-column: 1 / -1;
+  grid-row: 2 / 3;
+}
+
+.pancake-photo-1 {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+/* Tablet View */
+@media (min-width: 768px) {
+  h1 {
+    font-size: 3em;
+  }
+
+  h2 {
+    font-size: 2em;
+  }
+
+  h3 {
+    font-size: 1.5em;
+  }
+
+  p {
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+
+  ul {
+    padding-left: 2.5em;
+    padding-right: 2em;
+  }
+ 
+  .navbar {
+    width: 100%;
+    justify-content: space-around;
+    position: fixed;
+    margin: 0px;
+    padding: 10px;
+  }
+
+  .pet-photos {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .recipe-photos {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .main-pet-image, .main-recipe-image {
+    border: 5px solid #2c3e50;
+  }
+
+  .recipe-details {
+    padding: 2em;
+    margin: 2em;
+  }
+
+  .general-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    margin-bottom: 1em;
+  }
+
+}
